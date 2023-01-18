@@ -1,12 +1,12 @@
 Set up App.config file like below
 
 ```xml
-<configuration>  
-   <runtime>  
-      <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
-         <probing privatePath="bin;bin2\subbin;bin3"/>  
-      </assemblyBinding>  
-   </runtime>  
+<configuration>
+   <runtime>
+      <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+         <probing privatePath="bin;bin2\subbin;bin3"/>
+      </assemblyBinding>
+   </runtime>
 </configuration>
 ```
 
