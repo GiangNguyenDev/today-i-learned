@@ -5,3 +5,5 @@
 - **DRY**: Don't Repeat Yourself
 
 ![yagni-kiss-dry](/images/yagni-kiss-dry.png)
+
+*Source: https://dev.to/mariamarsh/5-principles-of-readable-code-kiss-yagni-dry-bdu-occams-razor-2kcp*
