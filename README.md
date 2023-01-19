@@ -1,8 +1,13 @@
 ### Categories
 
+- [Principles](#principles)
 - [JavaScript](#javascript)
 - [Visual Studio](#visual-studio)
 - [Visual Studio Code](#visual-studio-code)
+
+# Principles
+
+- [YAGNI, KISS and DRY](principles/yagni-kiss-dry.md)
 
 # JavaScript
 
