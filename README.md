@@ -1,17 +1,21 @@
 ### Categories
 
-- [Principles](#principles)
+- [GIT](#git)
 - [JavaScript](#javascript)
+- [Principles](#principles)
 - [Visual Studio](#visual-studio)
 - [Visual Studio Code](#visual-studio-code)
+
+# GIT
+
+- [GIT Commands](git/git-commands.md)
+# JavaScript
+
+- [How to format console output](javascript/console-log-formatting.md)
 
 # Principles
 
 - [YAGNI, KISS and DRY](principles/yagni-kiss-dry.md)
-
-# JavaScript
-
-- [How to format console output](javascript/console-log-formatting.md)
 
 # Visual Studio
 
