@@ -15,6 +15,7 @@
 
 # Principles
 
+- [SOLID](principles/solid.md)
 - [YAGNI, KISS and DRY](principles/yagni-kiss-dry.md)
 
 # Visual Studio
