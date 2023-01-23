@@ -3,18 +3,34 @@
 - [Account](#account)
 	- [Set up commit email](#set-up-commit-email)
 
+# Local Changes
+
+## Changed in working 
+
+```
+git status
+```
+
 # Branching/Tagging
 
 ## List branches
 
-```console
+```
 git branch
 ```
 
 Switch to branch
 
-```console
-git switch <branch>
+```
+git switch <branch_name>
+```
+
+# Merge/Rebase
+
+## Merge branch into current
+
+```
+git merge <branch_name>
 ```
 
 # Account
@@ -23,14 +39,14 @@ git switch <branch>
 
 Set up commit email globally
 
-```console
+```
 git config --global user.email <your_email> // Set up email
 git config --global user.email // Confirm email
 ```
 
 Set up commit email for current repository
 
-```console
+```
 git config user.email <your_email> // Set up email
 git config user.email // Confirm email
 ```
