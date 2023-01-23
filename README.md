@@ -3,6 +3,7 @@
 - [GIT](#git)
 - [JavaScript](#javascript)
 - [Principles](#principles)
+- [Shortcuts](#shortcuts)
 - [Visual Studio](#visual-studio)
 - [Visual Studio Code](#visual-studio-code)
 
@@ -18,6 +19,10 @@
 - [Object-oriented Programming](principles/oop.md)
 - [SOLID](principles/solid.md)
 - [YAGNI, KISS and DRY](principles/yagni-kiss-dry.md)
+
+# Shortcuts
+
+- [Outlook Shortcuts](shortcuts/outlook-shortcuts.md)
 
 # Visual Studio
 
