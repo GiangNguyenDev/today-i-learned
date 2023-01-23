@@ -1,0 +1,1 @@
+{"rule":"PHRASE_REPETITION","sentence":"^\\QGIT\nJavaScript\nPrinciples\nShortcuts\nVisual Studio\nVisual Studio Code\\E$"}
