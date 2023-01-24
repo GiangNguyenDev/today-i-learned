@@ -1,5 +1,5 @@
 |Command|Shortcut
 |--|--
-|Switch to Email|Ctrl + 1
-|Switch to Calendar|Ctrl + 2
-|Switch to People|Ctrl + 3
+|Switch to Email|<kbd>Ctrl</kbd> <kbd>1</kbd>
+|Switch to Calendar|<kbd>Ctrl</kbd> <kbd>2</kbd>
+|Switch to People|<kbd>Ctrl</kbd> <kbd>3</kbd>

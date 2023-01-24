@@ -23,6 +23,8 @@
 # Shortcuts
 
 - [Outlook Shortcuts](shortcuts/outlook-shortcuts.md)
+- [Teams Shortcuts](shortcuts/teams-shortcuts.md)
+- [Visual Studio Code Shortcuts](shortcuts/visual-studio-code-shortcuts.md)
 
 # Visual Studio
 
