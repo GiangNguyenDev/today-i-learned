@@ -3,6 +3,7 @@
 - [GIT](#git)
 - [HTML](#html)
 - [JavaScript](#javascript)
+- [Markdown](#markdown)
 - [Principles](#principles)
 - [Shortcuts](#shortcuts)
 - [Visual Studio](#visual-studio)
@@ -15,9 +16,14 @@
 # HTML
 
 - [Hide PDF toolbar in iframe](html/hide-pdf-toolbar-in-iframe.md)
+
 # JavaScript
 
 - [How to format console output](javascript/console-log-formatting.md)
+
+# Markdown
+
+- [Markdown Cheat Sheet](markdown/markdown-cheat-sheet.md)
 
 # Principles
 
@@ -27,9 +33,12 @@
 
 # Shortcuts
 
+- [Chrome Dev Tools Shortcuts](shortcuts/chrome-dev-tools-shortcuts.md)
+- [Excel Shortcuts](shortcuts/excel-shortcuts.md)
 - [Outlook Shortcuts](shortcuts/outlook-shortcuts.md)
 - [Teams Shortcuts](shortcuts/teams-shortcuts.md)
 - [Visual Studio Code Shortcuts](shortcuts/visual-studio-code-shortcuts.md)
+- [Windows Shortcuts](shortcuts/windows-shortcuts.md)
 
 # Visual Studio
 

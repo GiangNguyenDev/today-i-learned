@@ -1,3 +1,5 @@
+# Visual Studio Code Shortcuts
+
 |Command|Shortcut
 |--|--
 |Keyboard shortcuts|<kbd>Ctrl</kbd> <kbd>K</kbd>, <kbd>Ctrl</kbd> <kbd>S</kbd>

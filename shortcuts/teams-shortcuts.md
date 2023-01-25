@@ -1,3 +1,5 @@
+# Teams Shortcuts
+
 |Command|Shortcut
 |--|--
 |Start audio call|<kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>C</kbd>
