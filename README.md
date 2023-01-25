@@ -1,6 +1,7 @@
 ### Categories
 
 - [GIT](#git)
+- [HTML](#html)
 - [JavaScript](#javascript)
 - [Principles](#principles)
 - [Shortcuts](#shortcuts)
@@ -10,6 +11,10 @@
 # GIT
 
 - [GIT Commands](git/git-commands.md)
+
+# HTML
+
+- [Hide PDF toolbar in iframe](html/hide-pdf-toolbar-in-iframe.md)
 # JavaScript
 
 - [How to format console output](javascript/console-log-formatting.md)
