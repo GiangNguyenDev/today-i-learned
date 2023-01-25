@@ -1,3 +1,5 @@
+# How to specify application subdirectory for libraries
+
 Set up App.config file like below
 
 ```xml
@@ -10,4 +12,6 @@ Set up App.config file like below
 </configuration>
 ```
 
-[Source](https://learn.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/runtime/probing-element)
+---
+
+*Source: https://learn.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/runtime/probing-element*

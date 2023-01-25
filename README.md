@@ -43,7 +43,7 @@
 # Visual Studio
 
 - [Specifies application subdirectories for libraries](visual-studio/specifies-application-subdirectories-for-libraries.md)
-- [Copies out files after build](visual-studio/copies-ouput-files-after-build.md)
+- [Copies output files after build](visual-studio/copies-output-files-after-build.md)
 
 # Visual Studio Code
 
