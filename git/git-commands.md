@@ -1,11 +1,11 @@
 - [Branching/Tagging](#branchingtagging)
-	- [List branches](#list-branches)
+  - [List branches](#list-branches)
 - [Account](#account)
-	- [Set up commit email](#set-up-commit-email)
+  - [Set up commit email](#set-up-commit-email)
 
 # Local Changes
 
-## Changed in working 
+### Changed in working
 
 ```
 git status
@@ -13,13 +13,13 @@ git status
 
 # Branching/Tagging
 
-## List branches
+### List branches
 
 ```
 git branch
 ```
 
-Switch to branch
+### Switch to branch
 
 ```
 git switch <branch_name>
@@ -27,7 +27,7 @@ git switch <branch_name>
 
 # Merge/Rebase
 
-## Merge branch into current
+### Merge branch into current
 
 ```
 git merge <branch_name>
@@ -37,14 +37,14 @@ git merge <branch_name>
 
 ## Set up commit email
 
-Set up commit email globally
+### Set up commit email globally
 
 ```
 git config --global user.email <your_email> // Set up email
 git config --global user.email // Confirm email
 ```
 
-Set up commit email for current repository
+### Set up commit email for current repository
 
 ```
 git config user.email <your_email> // Set up email
