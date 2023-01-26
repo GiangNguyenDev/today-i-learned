@@ -1,6 +1,7 @@
 ### Categories
 
 - [GIT](#git)
+- [HeidiSQL](#heidisql)
 - [HTML](#html)
 - [JavaScript](#javascript)
 - [Markdown](#markdown)
@@ -12,6 +13,10 @@
 # GIT
 
 - [GIT Commands](git/git-commands.md)
+
+# HeidiSQL
+
+- [Save query as snippet](heidisql/save-query-as-snippet.md)
 
 # HTML
 

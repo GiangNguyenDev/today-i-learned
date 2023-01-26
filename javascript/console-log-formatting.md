@@ -11,4 +11,4 @@
 %c: Applies CSS styles to the output string
 ```
 
-![console-log-formatting](/images/console-log-formatting.png)
+![console-log-formatting](images/console-log-formatting.png)
