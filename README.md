@@ -1,6 +1,7 @@
 ### Categories
 
 - [GIT](#git)
+- [Guidelines](#guidelines)
 - [HeidiSQL](#heidisql)
 - [HTML](#html)
 - [JavaScript](#javascript)
@@ -14,6 +15,10 @@
 
 - [GIT Commands](git/git-commands.md)
 
+# Guidelines
+
+- [How to build an app from scratch](guidelines/build-app-from-scratch.md)
+
 # HeidiSQL
 
 - [Save query as snippet](heidisql/save-query-as-snippet.md)
@@ -21,6 +26,7 @@
 # HTML
 
 - [Hide PDF toolbar in iframe](html/hide-pdf-toolbar-in-iframe.md)
+- [HTML Color Names](html/html-color-names.md)
 
 # JavaScript
 
@@ -52,4 +58,5 @@
 
 # Visual Studio Code
 
+- [Active snippet on typing for markdown](vscode/activate-snippet-on-typing-for-markdown.md)
 - [Setting for suggestion based on words in document](vscode/settings-text-editor-suggestions.md)

@@ -57,7 +57,7 @@ These elements extend the basic syntax by adding additional features. Not all Ma
 ### Table
 
 | Syntax | Description |
-| ----------- | ----------- |
+| --- | --- |
 | Header | Title |
 | Paragraph | Text |
 
@@ -104,15 +104,11 @@ That is so funny! :joy:
 
 ### Highlight
 
-I need to highlight these ==very important words==.
+I need to highlight these <mark>very important words</mark>.
 
-### Subscript
+### Apply color on text
 
-H~2~O
-
-### Superscript
-
-X^2^
+<span style="color:green">Some green text</span>.
 
 ---
 
