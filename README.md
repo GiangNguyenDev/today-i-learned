@@ -6,6 +6,7 @@
 - [HTML](#html)
 - [JavaScript](#javascript)
 - [Markdown](#markdown)
+- [Postman](#postman)
 - [Principles](#principles)
 - [Shortcuts](#shortcuts)
 - [Visual Studio](#visual-studio)
@@ -35,6 +36,10 @@
 # Markdown
 
 - [Markdown Cheat Sheet](markdown/markdown-cheat-sheet.md)
+
+# Postman
+
+- [Extract response value to variable](postman/extract-response-value-to-variable.md)
 
 # Principles
 
