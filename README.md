@@ -1,5 +1,6 @@
 ### Categories
 
+- [C#](#c)
 - [GIT](#git)
 - [Guidelines](#guidelines)
 - [HeidiSQL](#heidisql)
@@ -11,6 +12,25 @@
 - [Shortcuts](#shortcuts)
 - [Visual Studio](#visual-studio)
 - [Visual Studio Code](#visual-studio-code)
+
+# C#
+
+- Fundamentals
+  - [Boolean](csharp/fundamentals/boolean.md)
+- Collections
+- LINQ
+- XML
+- Diagnostics
+- Threading
+- Asynchrony
+- Streams and I/O
+- Networking
+- Serialization
+- Assemblies
+- Reflection
+- Dynamic
+- Security
+- Regular Expressions
 
 # GIT
 
