@@ -26,6 +26,7 @@
 - Streams and I/O
 - Networking
 - Serialization
+  - [Data Contract Serializer](csharp/serialization/data-contract-serializer.md)
 - Assemblies
 - Reflection
 - Dynamic

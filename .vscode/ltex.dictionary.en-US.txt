@@ -3,3 +3,5 @@ HeidiSQL
 Visio
 Asynchrony
 LINQ
+parameterless
+Serializer
