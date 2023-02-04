@@ -25,6 +25,7 @@ Data structures where data elements are not placed sequentially or linearly are 
 
 ---
 
-*Sources:<br>
-https://www.geeksforgeeks.org/data-structures
-https://phoenixnap.com/kb/data-structures*
+*Sources:*
+- https://www.youtube.com/playlist?list=PLkZYeFmDuaN2-KUIv-mvbjfKszIGJ4FaY
+- https://www.geeksforgeeks.org/data-structures
+- https://phoenixnap.com/kb/data-structures
