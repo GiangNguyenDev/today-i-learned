@@ -5,6 +5,7 @@
 - [Data Structures](#data-structures)
 - [GIT](#git)
 - [Guidelines](#guidelines)
+- [Hardware](#hardware)
 - [HeidiSQL](#heidisql)
 - [HTML](#html)
 - [JavaScript](#javascript)
@@ -50,6 +51,10 @@
 # Guidelines
 
 - [How to build an app from scratch](guidelines/build-app-from-scratch.md)
+
+# Hardware
+
+- [Keyboard Layouts](hardware/keyboard-layouts.md)
 
 # HeidiSQL
 
