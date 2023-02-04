@@ -2,6 +2,7 @@
 
 - [C#](#c)
 - [Convention](#convention)
+- [Data Structures](#data-structures)
 - [GIT](#git)
 - [Guidelines](#guidelines)
 - [HeidiSQL](#heidisql)
@@ -37,6 +38,10 @@
 # Convention
 
 - [Case Styles](convention/case-styles.md)
+
+# Data Structures
+
+- [Data Structure Introduction](data-structures/data-structure-introduction.md)
 
 # GIT
 

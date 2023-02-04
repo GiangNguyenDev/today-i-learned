@@ -13,3 +13,4 @@
 |Trigger Parameter Hints|<kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Space</kbd>
 |Fold current level|<kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>ß</kbd>
 |Unfold current level|<kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>´</kbd>
+|Expand Line Selection|<kbd>Ctrl</kbd> <kbd>L</kbd>
