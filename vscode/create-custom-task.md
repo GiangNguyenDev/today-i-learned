@@ -4,15 +4,15 @@ Write the code below in the `tasks.json` file in the `.vscode` folder
 
 ```json
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "npm: start",
-			"type": "npm",
-			"script": "start",
-			"detail": "ng build --watch=true"
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: start",
+      "type": "npm",
+      "script": "start",
+      "detail": "ng build --watch=true"
+    }
+  ]
 }
 ```
 
@@ -22,9 +22,9 @@ Create the section below in the `keybindings.json` file. Please note that the pr
 
 ```json
 {
-	"key": "shift+alt+e",
-	"command": "workbench.action.tasks.runTask",
-	"args": "npm: start"
+  "key": "shift+alt+e",
+  "command": "workbench.action.tasks.runTask",
+  "args": "npm: start"
 }
 ```
 
