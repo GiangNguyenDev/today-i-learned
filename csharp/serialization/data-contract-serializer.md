@@ -8,17 +8,17 @@ If you have a constructor with parameter in your class, you can get an error dur
 [DataContract]
 public class Document
 {
-	public Document(string title, string type)
-	{
-		Title = title;
-		Type = type;
-	}
+  public Document(string title, string type)
+  {
+    Title = title;
+    Type = type;
+  }
 
-	[DataMember]
-	public string Title { get; set; }
+  [DataMember]
+  public string Title { get; set; }
 
-	[DataMember]
-	public string Type { get; set; }
+  [DataMember]
+  public string Type { get; set; }
 }
 ```
 
@@ -27,16 +27,16 @@ public class Document
 ```c#
 public class Document
 {
-	private Document() {}
+  private Document() {}
 
-	public Document(string title, string type)
-	{
-		Title = title;
-		Type = type;
-	}
+  public Document(string title, string type)
+  {
+    Title = title;
+    Type = type;
+  }
 
-	public string Title { get; set; }
+  public string Title { get; set; }
 
-	public string Type { get; set; }
+  public string Type { get; set; }
 }
 ```
