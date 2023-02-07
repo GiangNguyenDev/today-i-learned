@@ -107,4 +107,5 @@
 # Visual Studio Code
 
 - [Active snippet on typing for markdown](vscode/activate-snippet-on-typing-for-markdown.md)
+- [Create custom task](vscode/create-custom-task.md)
 - [Setting for suggestion based on words in document](vscode/settings-text-editor-suggestions.md)
