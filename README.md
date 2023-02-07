@@ -13,6 +13,7 @@
 - [Postman](#postman)
 - [Principles](#principles)
 - [Shortcuts](#shortcuts)
+- [UML](#uml)
 - [Visual Studio](#visual-studio)
 - [Visual Studio Code](#visual-studio-code)
 
@@ -92,6 +93,10 @@
 - [Teams Shortcuts](shortcuts/teams-shortcuts.md)
 - [Visual Studio Code Shortcuts](shortcuts/visual-studio-code-shortcuts.md)
 - [Windows Shortcuts](shortcuts/windows-shortcuts.md)
+
+# UML
+
+- [Class diagram](uml/class-diagram.md)
 
 # Visual Studio
 
