@@ -12,6 +12,7 @@
 - [Markdown](#markdown)
 - [Postman](#postman)
 - [Principles](#principles)
+- [Security](#security)
 - [Shortcuts](#shortcuts)
 - [UML](#uml)
 - [Visual Studio](#visual-studio)
@@ -84,6 +85,10 @@
 - [Object-oriented Programming](principles/oop.md)
 - [SOLID](principles/solid.md)
 - [YAGNI, KISS and DRY](principles/yagni-kiss-dry.md)
+
+# Security
+
+- [Self-signed Certificate](security/self-signed-certificate.md)
 
 # Shortcuts
 
