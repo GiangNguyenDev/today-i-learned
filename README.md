@@ -1,6 +1,6 @@
 ### Categories
 
-- [C#](#c)
+- [C# \& .NET](#c--net)
 - [Convention](#convention)
 - [Data Structures](#data-structures)
 - [GIT](#git)
@@ -18,10 +18,10 @@
 - [Visual Studio](#visual-studio)
 - [Visual Studio Code](#visual-studio-code)
 
-# C#
+# C# & .NET
 
 - Fundamentals
-  - [Boolean](csharp/fundamentals/boolean.md)
+  - [Boolean](csharp-dotnet/fundamentals/boolean.md)
 - Collections
 - LINQ
 - XML
@@ -31,12 +31,14 @@
 - Streams and I/O
 - Networking
 - Serialization
-  - [Data Contract Serializer](csharp/serialization/data-contract-serializer.md)
+  - [Data Contract Serializer](csharp-dotnet/serialization/data-contract-serializer.md)
 - Assemblies
 - Reflection
 - Dynamic
 - Security
 - Regular Expressions
+- Frameworks
+  - [Json.NET](csharp-dotnet/frameworks/json-dotnet.md)
 
 # Convention
 
