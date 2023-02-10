@@ -36,6 +36,8 @@
 - Reflection
 - Dynamic
 - Security
+- WCF
+  - [Get custom binding from web.config](csharp-dotnet/wcf/get-custom-binding-from-web-config.md)
 - Regular Expressions
 - Frameworks
   - [Json.NET](csharp-dotnet/frameworks/json-dotnet.md)
