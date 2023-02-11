@@ -10,6 +10,7 @@
 - [HTML](#html)
 - [JavaScript](#javascript)
 - [Markdown](#markdown)
+- [Microsoft 365](#microsoft-365)
 - [Postman](#postman)
 - [Principles](#principles)
 - [Security](#security)
@@ -17,6 +18,7 @@
 - [UML](#uml)
 - [Visual Studio](#visual-studio)
 - [Visual Studio Code](#visual-studio-code)
+- [Windows](#windows)
 
 # C# & .NET
 
@@ -80,6 +82,10 @@
 
 - [Markdown Cheat Sheet](markdown/markdown-cheat-sheet.md)
 
+# Microsoft 365
+
+- [Remove password from Excel](microsoft-365/remove-password-from-excel.md)
+
 # Postman
 
 - [Add header for the entire collection](postman/add-header-for-the-entire-collection.md)
@@ -119,3 +125,7 @@
 - [Active snippet on typing for markdown](vscode/activate-snippet-on-typing-for-markdown.md)
 - [Create custom task](vscode/create-custom-task.md)
 - [Setting for suggestion based on words in document](vscode/settings-text-editor-suggestions.md)
+
+# Windows
+
+- [Network Shell](windows/network-shell.md)
