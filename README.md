@@ -32,6 +32,7 @@
 - Threading
 - Asynchrony
 - Streams and I/O
+  - [Create file in MemoryStream](csharp-dotnet/streams-io/create-file-in-memory-stream.md)
 - Networking
 - Serialization
   - [Data Contract Serializer](csharp-dotnet/serialization/data-contract-serializer.md)
