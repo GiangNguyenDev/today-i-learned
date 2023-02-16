@@ -59,7 +59,8 @@
 
 # Guidelines
 
-- [How to build an app from scratch](guidelines/build-app-from-scratch.md)
+- [Build an app from scratch](guidelines/build-app-from-scratch.md)
+- [Build ASP.NET Core Web API](guidelines/build-asp-dot-net-core-web-api.md)
 
 # Hardware
 
