@@ -19,6 +19,7 @@
 - [Visual Studio](#visual-studio)
 - [Visual Studio Code](#visual-studio-code)
 - [Windows](#windows)
+- [WiX Toolset](#wix-toolset)
 
 # C# & .NET
 
@@ -31,6 +32,7 @@
 - Threading
 - Asynchrony
 - Streams and I/O
+  - [Create file in MemoryStream](csharp-dotnet/streams-io/create-file-in-memory-stream.md)
 - Networking
 - Serialization
   - [Data Contract Serializer](csharp-dotnet/serialization/data-contract-serializer.md)
@@ -130,3 +132,7 @@
 # Windows
 
 - [Network Shell](windows/network-shell.md)
+
+# WiX Toolset
+
+- [Fix build error with VS 2022](wix-toolset/fix-build-error-with-vs-2022.md)
