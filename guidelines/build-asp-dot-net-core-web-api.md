@@ -4,11 +4,11 @@ In Visual Studio, add new project with Web API template.
 
 ![](images/build-asp-dot-net-core-web-api_1676575868.png)
 
-The project will have a pre defined structure and components, so you can start to build your own project.
+The project will have a pre defined structure and components to help you start to build your own project.
 
 ![](images/build-asp-dot-net-core-web-api_1676576074.png)
 
-# Add Controller
+# Add Controller into API
 
 ```c#
 [ApiController]
@@ -28,7 +28,7 @@ public class WeatherForecastController : ControllerBase
 - All controller type must derive from `ControllerBase`, an base class for an MVC controller without view support.
 - `HttpGet` identifies an action that supports the HTTP GET method. If the method should have a custom name, please use property `Name` of the `HttpGet` attribute.
 
-# Add Entity class
+# Create Entity class
 
 ```c#
 public class Product
@@ -48,9 +48,9 @@ Install Nuget packages
 - `Microsoft.EntityFrameworkCore.Sqlite`
 - `Microsoft.EntityFrameworkCore.Design`
 
-which version is compatible with .NET version of your project.
+with version compatible to .NET in your project.
 
-# Create StoreContext class
+# Create StoreContext
 
 ```c#
 public class StoreContext : DbContext
@@ -74,16 +74,13 @@ public class StoreContext : DbContext
 }
 ```
 
-A `DbContext` instance represents a session with the database and can be used to query and save instances of your entities. `DbContext` is a combination of the
-Unit Of Work and Repository patterns. It is easier with these patterns to write unit test and mock data later.
-
-Each property in the `StoreContext` represent a database table.
-
-`DbContextOptions` are the options to be used in `DbContext`.
+- `StoreContext` is a `DbContext` instance, which represents a session with the database and can be used to query and save instances of your entities. `DbContext` is a combination of the Unit Of Work and Repository patterns. It is easier with these patterns to write unit test and mock data later.
+- `DbContextOptions` are the options to be used in `DbContext`.
+- Each property in the `StoreContext` represent a database table.
 
 # Set up Connection String for database
 
-It can be done in `appsettings.json` or `appsettings.Development.json` file.
+Connection String configures, how to connect with the database. The authentication can also be set up here if needed. You can define the Connection String in `appsettings.json` or `appsettings.Development.json` file.
 
 ```json
 {
@@ -135,3 +132,21 @@ dotnet ef migrations add InitialCreate -o Data/Migrations
 ```console
 dotnet ef database update
 ```
+
+# Implement a method of Controller
+
+Your Controller will provide endpoints and their functionalities for the API. Each endpoint is represented with a public method. E.g.:
+
+```c#
+[HttpGet("{id}")]
+[ProducesResponseType(StatusCodes.Status200OK)]
+[ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
+public async Task<ActionResult<Product>> GetProduct(int id)
+{
+  //...
+}
+```
+
+- `HttpGet`: Identifies an action that supports the HTTP GET method.
+- `ProducesResponseType`: A filter that specifies the type of the value and status code returned by the action.
+- `ActionResult<T>`: Enables returning a type deriving from `ActionResult` (e.g., `Ok(Product)`, `NotFound(new ApiResponse(404))`) or return a specific type T (e.g., `Product`).
