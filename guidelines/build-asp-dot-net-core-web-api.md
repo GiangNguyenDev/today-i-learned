@@ -42,3 +42,96 @@ public class Product
 Entity is a class, which often used to represent a single row of a database table. So, we will fill this Entity class with data, then save them later into database. By reading data from DB, we create instance of the Entity class with data in it.
 
 # Set up Entity Framework
+
+Install Nuget packages
+
+- `Microsoft.EntityFrameworkCore.Sqlite`
+- `Microsoft.EntityFrameworkCore.Design`
+
+which version is compatible with .NET version of your project.
+
+# Create StoreContext class
+
+```c#
+public class StoreContext : DbContext
+{
+  public StoreContext(DbContextOptions<StoreContext> options) : base(options)
+  {
+  }
+
+  public DbSet<Product> Products { get; set; }
+
+  public DbSet<ProductType> ProductTypes { get; set; }
+
+  public DbSet<ProductBrand> ProductBrands { get; set; }
+
+  protected override void OnModelCreating(ModelBuilder modelBuilder)
+  {
+    base.OnModelCreating(modelBuilder);
+    modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+    // ...
+  }
+}
+```
+
+A `DbContext` instance represents a session with the database and can be used to query and save instances of your entities. `DbContext` is a combination of the
+Unit Of Work and Repository patterns. It is easier with these patterns to write unit test and mock data later.
+
+Each property in the `StoreContext` represent a database table.
+
+`DbContextOptions` are the options to be used in `DbContext`.
+
+# Set up Connection String for database
+
+It can be done in `appsettings.json` or `appsettings.Development.json` file.
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Data source=mydatabase.db"
+  }
+}
+```
+
+- `DefaultConnection`: Name of Connection String
+- `Data source`: Syntax for Sqlite data source
+- `mydatabase.db`: Name of database
+
+## Register DbContext service
+
+In the main file `program.cs`, register the `DbContext` as a service, so it can be used later in the application.
+
+```c#
+builder.Services.AddDbContext<StoreContext>(opt => opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+```
+
+# Install one of Entity Framework Core tools
+
+These tools set can be used to manage Migrations and to scaffold a DbContext and entity types by reverse engineering the schema of a database.
+
+- EF Core Package Manager Console tools (Visual Studio)
+- EF Core .NET command-line interface (CLI) tools (cross-platform)
+
+_Source: https://learn.microsoft.com/en-us/ef/core/cli/_
+
+# Schema migration
+
+A schema migration or database migration refers to the management of version-controlled, incremental and reversible changes to relational database schemas.
+
+## Create migration with dotnet-ef
+
+```console
+dotnet ef migrations add InitialCreate -o Data/Migrations
+```
+
+## Update database
+
+```console
+dotnet ef database update
+```
