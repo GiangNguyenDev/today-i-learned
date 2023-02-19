@@ -150,3 +150,17 @@ public async Task<ActionResult<Product>> GetProduct(int id)
 - `HttpGet`: Identifies an action that supports the HTTP GET method.
 - `ProducesResponseType`: A filter that specifies the type of the value and status code returned by the action.
 - `ActionResult<T>`: Enables returning a type deriving from `ActionResult` (e.g., `Ok(Product)`, `NotFound(new ApiResponse(404))`) or return a specific type T (e.g., `Product`).
+
+# Project Structure
+
+
+# Repository Pattern
+
+Some of benefits when using Repository Pattern in .NET project:
+
+- Decouple business code from data access
+- Separation of concerns
+- Minimize duplicate query logic
+- Testability
+
+![](images/build-asp-dot-net-core-web-api_1676823747.png)
