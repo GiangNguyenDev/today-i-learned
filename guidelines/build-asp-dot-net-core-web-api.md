@@ -168,7 +168,7 @@ public async Task<ActionResult<Product>> GetProduct(int id)
 
 # Project Structure
 
-![](images/build-asp-dot-net-core-web-api_1676837108.png)
+![](images/build-asp-dot-net-core-web-api_1676838645.png)
 
 - API: Startup project, which contains dependency injection container and middle wares. It is responsible for routing incoming requests to Controllers.
 - Infrastructure: Responsible for sending data to database
@@ -183,4 +183,4 @@ Some of benefits when using Repository Pattern in .NET project:
 - Minimize duplicate query logic
 - Testability
 
-![](images/build-asp-dot-net-core-web-api_1676837248.png)
+![](images/build-asp-dot-net-core-web-api_1676838671.png)
