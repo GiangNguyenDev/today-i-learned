@@ -1,3 +1,18 @@
+- [Create new Web API project](#create-new-web-api-project)
+- [Add Controller into API](#add-controller-into-api)
+- [Create Entity class](#create-entity-class)
+- [Set up Entity Framework](#set-up-entity-framework)
+- [Create StoreContext](#create-storecontext)
+- [Set up Connection String for database](#set-up-connection-string-for-database)
+  - [Register DbContext service](#register-dbcontext-service)
+- [Install one of Entity Framework Core tools](#install-one-of-entity-framework-core-tools)
+- [Schema migration](#schema-migration)
+  - [Create migration with dotnet-ef](#create-migration-with-dotnet-ef)
+  - [Update database](#update-database)
+- [Implement a method of Controller](#implement-a-method-of-controller)
+- [Project Structure](#project-structure)
+- [Repository Pattern](#repository-pattern)
+
 # Create new Web API project
 
 In Visual Studio, add new project with Web API template.
