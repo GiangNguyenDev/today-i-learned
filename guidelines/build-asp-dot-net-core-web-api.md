@@ -12,6 +12,7 @@
 - [Implement a method of Controller](#implement-a-method-of-controller)
 - [Project Structure](#project-structure)
 - [Repository Pattern](#repository-pattern)
+  - [Create Repository](#create-repository)
 
 # Create new Web API project
 
@@ -184,3 +185,35 @@ Some of benefits when using Repository Pattern in .NET project:
 - Testability
 
 ![](images/build-asp-dot-net-core-web-api_1676838671.png)
+
+## Create Repository
+
+```c#
+public interface IProductRepository
+{
+  Task<Product> GetProductByIdAsync(int id);
+  Task<IReadOnlyList<Product>> GetProductsAsync();
+}
+```
+
+```c#
+public class ProductRepository : IProductRepository
+{
+  private readonly StoreContext _context;
+
+  public ProductRepository(StoreContext context)
+  {
+    _context = context;
+  }
+
+  public async Task<Product> GetProductByIdAsync(int id)
+  {
+    //...
+  }
+
+  public async Task<IReadOnlyList<Product>> GetProductsAsync()
+  {
+    //...
+  }
+}
+```
