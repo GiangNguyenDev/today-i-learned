@@ -1,5 +1,6 @@
 ### Categories
 
+- [Angular](#angular)
 - [C# \& .NET](#c--net)
 - [Convention](#convention)
 - [Data Structures](#data-structures)
@@ -20,6 +21,16 @@
 - [Visual Studio Code](#visual-studio-code)
 - [Windows](#windows)
 - [WiX Toolset](#wix-toolset)
+
+# Angular
+
+- TypeScript
+  - [Add resource into HTML in runtime](angular/typescript/add-resource-into-html-in-runtime.md)
+- Built-in Directives
+- Forms
+- Dependency Injection
+- HTTP
+- Routing
 
 # C# & .NET
 
