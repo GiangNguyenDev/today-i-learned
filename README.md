@@ -2,6 +2,7 @@
 
 - [Angular](#angular)
 - [C# \& .NET](#c--net)
+- [Chrome](#chrome)
 - [Convention](#convention)
 - [Data Structures](#data-structures)
 - [GIT](#git)
@@ -57,6 +58,10 @@
 - Regular Expressions
 - Frameworks
   - [Json.NET](csharp-dotnet/frameworks/json-dotnet.md)
+
+# Chrome
+
+- [Inspect dropdown menu](chrome/inspect-dropdown-menu.md)
 
 # Convention
 
