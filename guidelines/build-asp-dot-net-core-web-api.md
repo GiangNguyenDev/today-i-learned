@@ -292,11 +292,11 @@ var logger = services.GetRequiredService<ILogger<Program>>();
 
 try
 {
-	await context.Database.MigrateAsync();
+  await context.Database.MigrateAsync();
 }
 catch (Exception ex)
 {
-	logger.LogError(ex, "An error occurred during migration");
+  logger.LogError(ex, "An error occurred during migration");
 }
 
 app.Run();
