@@ -15,4 +15,6 @@
 |Unfold current level|<kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>´</kbd>
 |Expand Line Selection|<kbd>Ctrl</kbd> <kbd>L</kbd>
 |Add cursor|<kbd>Alt</kbd> <kbd>Click</kbd>
-|Select words of multiple cursors|<kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>Right</kbd>
+|Select words of multiple cursors|<kbd>Shift</kbd> <kbd>Alt</kbd> <kbd>Right</kbd>
+|Expand current selection|<kbd>Shift</kbd> <kbd>Alt</kbd> <kbd>Right</kbd>
+|Shrink current selection|<kbd>Shift</kbd> <kbd>Alt</kbd> <kbd>Left</kbd>
