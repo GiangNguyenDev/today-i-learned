@@ -2,7 +2,7 @@
 
 If you like to get a custom binding defined in `web.config` file or other configuration, you can do it in C# as below.
 
-```cs
+```c#
 Binding binding = null;
 Configuration config = WebConfigurationManager.OpenWebConfiguration(HttpContext.Current.Request.ApplicationPath);
 

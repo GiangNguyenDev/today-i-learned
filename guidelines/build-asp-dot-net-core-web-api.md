@@ -33,7 +33,7 @@ The project will have a pre defined structure and components to help you start t
 
 # Add Controller into API
 
-```cs
+```c#
 [ApiController]
 [Route("api/[controller]")]
 public class WeatherForecastController : ControllerBase
@@ -57,7 +57,7 @@ Entity is a class, which often used to represent a single row of a database tabl
 
 If in an entity class, we create two properties `ProductType` and `ProductTypeId`, the naming convention helps entity framework to recognize that the `ProductTypeId` is the foreign key of the other property `ProductType`.
 
-```cs
+```c#
 public class Product : BaseEntity
 {
   public string Name { get; set; }
@@ -82,7 +82,7 @@ with version compatible to .NET in your project.
 
 # Create StoreContext
 
-```cs
+```c#
 public class StoreContext : DbContext
 {
   public StoreContext(DbContextOptions<StoreContext> options) : base(options)
@@ -134,7 +134,7 @@ Connection String configures, how to connect with the database. The authenticati
 
 In the main file `program.cs`, register the `DbContext` as a service, so it can be used later in the application.
 
-```cs
+```c#
 builder.Services.AddDbContext<StoreContext>(opt => opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 ```
 
@@ -176,7 +176,7 @@ dotnet ef migrations remove -p <ProjectName> -s <StartupProject>
 
 Your Controller will provide endpoints and their functionalities for the API. Each endpoint is represented with a public method. E.g.:
 
-```cs
+```c#
 [HttpGet("{id}")]
 [ProducesResponseType(StatusCodes.Status200OK)]
 [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -211,7 +211,7 @@ Some of benefits when using Repository Pattern in .NET project:
 
 ## Create Repository
 
-```cs
+```c#
 public interface IProductRepository
 {
   Task<Product> GetProductByIdAsync(int id);
@@ -219,7 +219,7 @@ public interface IProductRepository
 }
 ```
 
-```cs
+```c#
 public class ProductRepository : IProductRepository
 {
   private readonly StoreContext _context;
@@ -245,7 +245,7 @@ public class ProductRepository : IProductRepository
 
 ## Defining a configuration class
 
-```cs
+```c#
 public class ProductConfiguration : IEntityTypeConfiguration<Product>
 {
   public void Configure(EntityTypeBuilder<Product> builder)
@@ -266,7 +266,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 
 ## Applying the configuration to StoreContext
 
-```cs
+```c#
 public class StoreContext : DbContext
 {
   // ...
@@ -284,7 +284,7 @@ public class StoreContext : DbContext
 
 ## Apply the migration before running the application
 
-```cs
+```c#
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
 var context = services.GetRequiredService<StoreContext>();
@@ -304,7 +304,7 @@ app.Run();
 
 ## Add Seed data
 
-```cs
+```c#
 public class StoreContextSeed
 {
   public static async Task SeedAsync(StoreContext context)

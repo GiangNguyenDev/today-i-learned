@@ -4,7 +4,7 @@ If you have a constructor with parameter in your class, you can get an error dur
 
 ## Option A: Use `DataContract` and `DataMember` attributes
 
-```cs
+```c#
 [DataContract]
 public class Document
 {
@@ -24,7 +24,7 @@ public class Document
 
 ## Option B: Create a parameterless constructor, which doesn't need to be public.
 
-```cs
+```c#
 public class Document
 {
   private Document() {}

@@ -2,7 +2,7 @@
 
 This class provides access to configuration files for client applications. It can also be used in web applications to access some configuration like app settings.
 
-```cs
+```c#
 string username = ConfigurationManager.AppSettings["Username"];
 string password = ConfigurationManager.AppSettings["Password"];
 ```
@@ -11,7 +11,7 @@ string password = ConfigurationManager.AppSettings["Password"];
 
 This class provides access to configuration files as they apply to Web applications. Using `WebConfigurationManager` is the preferred way to work with configuration files related to Web applications. For client applications, use the `ConfigurationManager` class.
 
-```cs
+```c#
 // Get the connectionStrings section.
 ConnectionStringsSection connectionStringsSection = WebConfigurationManager.GetSection("connectionStrings") as ConnectionStringsSection;
 

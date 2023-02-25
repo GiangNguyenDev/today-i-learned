@@ -2,7 +2,7 @@
 
 Use attribute property `JsonProperty` like below.
 
-```cs
+```c#
 public class Vessel
 {
   public string Name { get; set; }

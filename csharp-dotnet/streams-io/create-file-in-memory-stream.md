@@ -2,7 +2,7 @@
 
 Sometimes you want to create a file on the fly to use right away, and don't want to save it in the hard drive. You can achieve it like below.
 
-```cs
+```c#
 // Use Unicode to encode XML data
 byte[] xmlData = Encoding.Unicode.GetBytes(xmlString);
 var xmlStream = new MemoryStream(xmlData);
