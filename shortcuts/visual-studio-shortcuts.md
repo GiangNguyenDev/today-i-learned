@@ -18,3 +18,5 @@
 |Command|Shortcut
 |--|--
 |Create new item|<kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>A</kbd>
+|Add new caret|<kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Click</kbd>
+|Add new word selection|<kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Double Click</kbd>

@@ -15,7 +15,7 @@
 |Unfold current level|<kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>´</kbd>
 |Add selection to next find match|<kbd>Ctrl</kbd> <kbd>D</kbd>
 |Expand Line Selection|<kbd>Ctrl</kbd> <kbd>L</kbd>
-|Add cursor|<kbd>Alt</kbd> <kbd>Click</kbd>
+|Add caret|<kbd>Alt</kbd> <kbd>Click</kbd>
 |Box selection|<kbd>Shift</kbd> <kbd>Alt</kbd> <kbd>Drag</kbd>
 |Column selection|<kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Alt</kbd> <kbd>Arrow</kbd>
 |Expand current selection|<kbd>Shift</kbd> <kbd>Alt</kbd> <kbd>Right</kbd>
