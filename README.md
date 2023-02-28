@@ -148,6 +148,7 @@
 
 # Windows
 
+- [Access localhost from mobile device](windows/access-localhost-from-mobile-device.md)
 - [Network Shell](windows/network-shell.md)
 
 # WiX Toolset
