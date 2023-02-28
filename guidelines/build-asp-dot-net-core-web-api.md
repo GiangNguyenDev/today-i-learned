@@ -20,6 +20,9 @@
   - [Applying the configuration to StoreContext](#applying-the-configuration-to-storecontext)
   - [Apply the migration before running the application](#apply-the-migration-before-running-the-application)
   - [Add Seed data](#add-seed-data)
+- [Generic Repository](#generic-repository)
+  - [Benefits when using Generic Repository Pattern](#benefits-when-using-generic-repository-pattern)
+  - [Specification Pattern](#specification-pattern)
 
 # Create new Web API project
 
@@ -334,3 +337,68 @@ public class StoreContextSeed
   }
 }
 ```
+
+# Generic Repository
+
+## Benefits when using Generic Repository Pattern
+
+- Single and simple repository for many entities
+- Reduce data access
+
+```c#
+public interface IGenericRepository<T> where T : BaseEntity
+{
+  Task<T> GetByIdAsync(int id);
+
+  Task<IReadOnlyList<T>> ListAllAsync();
+
+  Task<T> GetEntityWithSpec(ISpecification<T> spec);
+
+  Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec);
+
+  Task<int> CountAsync(ISpecification<T> spec);
+}
+```
+
+```c#
+public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
+{
+  private readonly StoreContext _context;
+
+  public GenericRepository(StoreContext context)
+  {
+    _context = context;
+  }
+
+  public async Task<int> CountAsync(ISpecification<T> spec)
+  {
+    // ...
+  }
+
+  public async Task<T> GetByIdAsync(int id)
+  {
+    // ...
+  }
+
+  public async Task<T> GetEntityWithSpec(ISpecification<T> spec)
+  {
+    // ...
+  }
+
+  public async Task<IReadOnlyList<T>> ListAllAsync()
+  {
+    // ...
+  }
+
+  public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
+  {
+    // ...
+  }
+}
+```
+
+## Specification Pattern
+
+Unfortunately Generic Repository has sometimes bad reputation. It is difficult to implement data access with specific requirement, or paginating, or sorting of data.
+
+To overcome all of this, we will apply specification pattern.
