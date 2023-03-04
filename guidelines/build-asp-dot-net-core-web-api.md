@@ -24,6 +24,8 @@
   - [Benefits when using Generic Repository Pattern](#benefits-when-using-generic-repository-pattern)
   - [Introduce to Specification Pattern](#introduce-to-specification-pattern)
   - [Create a specification class](#create-a-specification-class)
+  - [Implement SpecificationEvaluator](#implement-specificationevaluator)
+  - [Implement the repository with specification methods](#implement-the-repository-with-specification-methods)
 
 # Create new Web API project
 
@@ -459,5 +461,50 @@ public class BaseSpecification<T> : ISpecification<T>
   {
     Includes.Add(includeExpression);
   }
+}
+```
+
+## Implement SpecificationEvaluator
+
+```c#
+public class SpecificationEvaluator<TEntity> where TEntity : BaseEntity
+{
+  /// <summary>
+  /// Applies specification expressions (filtering, sorting, includes) to the input query
+  /// </summary>
+  public static IQueryable<TEntity> GetQuery(IQueryable<TEntity> inputQuery, ISpecification<TEntity> spec)
+  {
+    var query = inputQuery;
+
+    if (spec.Criteria != null)
+      query = query.Where(spec.Criteria);
+
+    query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
+    return query;
+  }
+}
+```
+
+## Implement the repository with specification methods
+
+```c#
+public async Task<T> GetEntityWithSpec(ISpecification<T> spec)
+{
+  return await ApplySpecification(spec).FirstOrDefaultAsync();
+}
+
+public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
+{
+  return await ApplySpecification(spec).ToListAsync();
+}
+
+/// <summary>
+/// Apply specification for a generic DbSet of current context
+/// </summary>
+/// <param name="spec">Specification</param>
+/// <returns>Filtered query</returns>
+private IQueryable<T> ApplySpecification(ISpecification<T> spec)
+{
+  return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
 }
 ```
