@@ -22,7 +22,8 @@
   - [Add Seed data](#add-seed-data)
 - [Generic Repository](#generic-repository)
   - [Benefits when using Generic Repository Pattern](#benefits-when-using-generic-repository-pattern)
-  - [Specification Pattern](#specification-pattern)
+  - [Introduce to Specification Pattern](#introduce-to-specification-pattern)
+  - [Create a specification class](#create-a-specification-class)
 
 # Create new Web API project
 
@@ -377,12 +378,12 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
 
   public async Task<T> GetByIdAsync(int id)
   {
-    // ...
+    return _context.Set<T>().FindAsync(id);
   }
 
   public async Task<T> GetEntityWithSpec(ISpecification<T> spec)
   {
-    // ...
+    this. _context.Set<T>().ToListAsync();
   }
 
   public async Task<IReadOnlyList<T>> ListAllAsync()
@@ -397,8 +398,66 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
 }
 ```
 
-## Specification Pattern
+After creating the Generic Repository, we can add it as a scoped service. Because we don't know the type of our Generic Repository at the beginning (IGenericRepository<Product> or IGenericRepository<ProductBrand>), we must use the keyword `typeof` here.
 
-Unfortunately Generic Repository has sometimes bad reputation. It is difficult to implement data access with specific requirement, or paginating, or sorting of data.
+```c#
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+```
+
+## Introduce to Specification Pattern
+
+Unfortunately Generic Repository has sometimes bad reputation.
+
+- It is difficult to implement data access with specific requirement
+- Paginating, filtering or sorting of data.
+- Leaky abstraction
+- Not meaningful method name
 
 To overcome all of this, we will apply specification pattern.
+
+- Describes a query in an object
+- Return an IQueryable<T>
+- Generic List method takes specification as parameter
+- Specification can have meaningful name
+
+## Create a specification class
+
+```c#
+public interface ISpecification<T>
+{
+  /// <summary>
+  /// Store filtering expression
+  /// </summary>
+  Expression<Func<T, bool>> Criteria { get; }
+
+  /// <summary>
+  /// Store expression, that specifies the related entities to include in the query result
+  /// </summary>
+  List<Expression<Func<T, object>>> Includes { get; }
+}
+```
+
+```c#
+public class BaseSpecification<T> : ISpecification<T>
+{
+  public BaseSpecification() {}
+
+  public BaseSpecification(Expression<Func<T, bool>> criteria)
+  {
+    Criteria = criteria;
+  }
+
+  public Expression<Func<T, bool>> Criteria { get; }
+
+  public List<Expression<Func<T, object>>> Includes { get; } = new List<Expression<Func<T, object>>>();
+
+  /// <summary>
+  /// Include entity of other database table into the current table
+  /// </summary>
+  /// <param name="includeExpression"></param>
+  protected void AddInclude(Expression<Func<T, object>> includeExpression)
+  {
+    Includes.Add(includeExpression);
+  }
+}
+```
