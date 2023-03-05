@@ -23,9 +23,12 @@
 - [Generic Repository](#generic-repository)
   - [Benefits when using Generic Repository Pattern](#benefits-when-using-generic-repository-pattern)
   - [Introduce to Specification Pattern](#introduce-to-specification-pattern)
-  - [Create a specification class](#create-a-specification-class)
+  - [Create specification interface](#create-specification-interface)
+  - [Create base class of specification](#create-base-class-of-specification)
   - [Implement SpecificationEvaluator](#implement-specificationevaluator)
   - [Implement the repository with specification methods](#implement-the-repository-with-specification-methods)
+  - [Create specification class](#create-specification-class)
+  - [Use specification in Controller class](#use-specification-in-controller-class)
 
 # Create new Web API project
 
@@ -422,7 +425,7 @@ To overcome all of this, we will apply specification pattern.
 - Generic List method takes specification as parameter
 - Specification can have meaningful name
 
-## Create a specification class
+## Create specification interface
 
 ```c#
 public interface ISpecification<T>
@@ -438,6 +441,8 @@ public interface ISpecification<T>
   List<Expression<Func<T, object>>> Includes { get; }
 }
 ```
+
+## Create base class of specification
 
 ```c#
 public class BaseSpecification<T> : ISpecification<T>
@@ -488,23 +493,54 @@ public class SpecificationEvaluator<TEntity> where TEntity : BaseEntity
 ## Implement the repository with specification methods
 
 ```c#
-public async Task<T> GetEntityWithSpec(ISpecification<T> spec)
+public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
 {
-  return await ApplySpecification(spec).FirstOrDefaultAsync();
-}
+  public async Task<T> GetEntityWithSpec(ISpecification<T> spec)
+  {
+    return await ApplySpecification(spec).FirstOrDefaultAsync();
+  }
 
-public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
-{
-  return await ApplySpecification(spec).ToListAsync();
-}
+  public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
+  {
+    return await ApplySpecification(spec).ToListAsync();
+  }
 
-/// <summary>
-/// Apply specification for a generic DbSet of current context
-/// </summary>
-/// <param name="spec">Specification</param>
-/// <returns>Filtered query</returns>
-private IQueryable<T> ApplySpecification(ISpecification<T> spec)
+  /// <summary>
+  /// Apply specification for a generic DbSet of current context
+  /// </summary>
+  /// <param name="spec">Specification</param>
+  /// <returns>Filtered query</returns>
+  private IQueryable<T> ApplySpecification(ISpecification<T> spec)
+  {
+    return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
+  }
+}
+```
+
+## Create specification class
+
+```c#
+public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
 {
-  return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
+  public ProductsWithTypesAndBrandsSpecification()
+  {
+    AddInclude(x => x.ProductType);
+    AddInclude(x => x.ProductBrand);
+  }
+}
+```
+
+## Use specification in Controller class
+
+```c#
+public class ProductsController : BaseApiController
+{
+  [HttpGet]
+  public async Task<ActionResult<List<Product>>> GetProducts()
+  {
+    var spec = new ProductsWithTypesAndBrandsSpecification();
+    var products = await _productRepo.ListAsync(spec);
+    return Ok(products);
+  }
 }
 ```
