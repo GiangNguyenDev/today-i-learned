@@ -5,6 +5,8 @@
 - [Chrome](#chrome)
 - [Convention](#convention)
 - [Data Structures](#data-structures)
+- [Design Patterns](#design-patterns)
+- [Design Principles](#design-principles)
 - [GIT](#git)
 - [Guidelines](#guidelines)
 - [Hardware](#hardware)
@@ -14,7 +16,6 @@
 - [Markdown](#markdown)
 - [Microsoft 365](#microsoft-365)
 - [Postman](#postman)
-- [Principles](#principles)
 - [Security](#security)
 - [Shortcuts](#shortcuts)
 - [UML](#uml)
@@ -71,6 +72,16 @@
 
 - [Data Structure Introduction](data-structures/data-structure-introduction.md)
 
+# Design Patterns
+
+- [Domain-driven Design](design-patterns/domain-driven-design.md)
+
+# Design Principles
+
+- [Object-oriented Programming](principles/oop.md)
+- [SOLID](principles/solid.md)
+- [YAGNI, KISS and DRY](principles/yagni-kiss-dry.md)
+
 # GIT
 
 - [GIT Commands](git/git-commands.md)
@@ -109,12 +120,6 @@
 
 - [Add header for the entire collection](postman/add-header-for-the-entire-collection.md)
 - [Extract response value to variable](postman/extract-response-value-to-variable.md)
-
-# Principles
-
-- [Object-oriented Programming](principles/oop.md)
-- [SOLID](principles/solid.md)
-- [YAGNI, KISS and DRY](principles/yagni-kiss-dry.md)
 
 # Security
 
