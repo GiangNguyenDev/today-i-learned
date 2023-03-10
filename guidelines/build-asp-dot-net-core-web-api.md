@@ -29,6 +29,7 @@
   - [Implement the repository with specification methods](#implement-the-repository-with-specification-methods)
   - [Create specification class](#create-specification-class)
   - [Use specification in Controller class](#use-specification-in-controller-class)
+- [Class Diagram](#class-diagram)
 
 # Create new Web API project
 
@@ -542,5 +543,32 @@ public class ProductsController : BaseApiController
     var products = await _productRepo.ListAsync(spec);
     return Ok(products);
   }
+}
+```
+
+# Class Diagram
+
+```mermaid
+classDiagram
+direction LR
+
+ProductsController ..> IGenericRepository
+IGenericRepository <|.. GenericRepository
+ProductsController --> ProductsWithTypesAndBrandsSpecification
+ProductsWithTypesAndBrandsSpecification --|> BaseSpecification
+BaseSpecification ..|> ISpecification
+
+class ProductsController {
+  GetProducts()
+  GetProduct(id)
+}
+
+class ProductsWithTypesAndBrandsSpecification {
+  +constructor(productParams)
+}
+
+class BaseSpecification {
+  +Criteria: Expression<Func<T, bool>>
+  +Includes: List<Expression<Func<T, object>>>
 }
 ```
