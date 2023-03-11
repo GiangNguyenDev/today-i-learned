@@ -550,25 +550,49 @@ public class ProductsController : BaseApiController
 
 ```mermaid
 classDiagram
-direction LR
+direction TB
 
-ProductsController ..> IGenericRepository
-IGenericRepository <|.. GenericRepository
-ProductsController --> ProductsWithTypesAndBrandsSpecification
+ProductsController ..> ProductsWithTypesAndBrandsSpecification
 ProductsWithTypesAndBrandsSpecification --|> BaseSpecification
 BaseSpecification ..|> ISpecification
+ProductsController --> IGenericRepository~BaseEntity~
+IGenericRepository~BaseEntity~ <|.. GenericRepository
+GenericRepository ..> ISpecification
+GenericRepository --> StoreContext
+StoreContext --|> DbContext
+GenericRepository ..> SpecificationEvaluator
 
 class ProductsController {
-  GetProducts()
-  GetProduct(id)
+  +GetProducts()
+  +GetProduct(id)
 }
 
 class ProductsWithTypesAndBrandsSpecification {
-  +constructor(productParams)
+  constructor(productParams)
+  constructor(id)
 }
 
 class BaseSpecification {
-  +Criteria: Expression<Func<T, bool>>
-  +Includes: List<Expression<Func<T, object>>>
+  +Criteria: Expression~Func~T+bool~~
+  +Includes: List~Expression~Func~T+object~~~
+}
+
+class GenericRepository {
+  +CountAsync(spec)
+  +GetByIdAsync(id)
+  +GetEntityWithSpec(spec)
+  +ListAllAsync()
+  +ListAsync(spec)
+  -ApplySpecification(spec)
+}
+
+class SpecificationEvaluator {
+  +GetQuery(inputQuery, spec)
+}
+
+class StoreContext {
+  +Products: DbSet~Product~
+  +ProductBrands: DbSet~ProductBrand~
+  +ProductTypes: DbSet~ProductType~
 }
 ```
