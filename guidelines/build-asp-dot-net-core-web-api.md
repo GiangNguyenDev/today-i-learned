@@ -30,6 +30,7 @@
   - [Create specification class](#create-specification-class)
   - [Use specification in Controller class](#use-specification-in-controller-class)
 - [Class Diagram](#class-diagram)
+  - [Create DTO object](#create-dto-object)
 
 # Create new Web API project
 
@@ -594,5 +595,40 @@ class StoreContext {
   +Products: DbSet~Product~
   +ProductBrands: DbSet~ProductBrand~
   +ProductTypes: DbSet~ProductType~
+}
+```
+
+## Create DTO object
+
+DTO stand for Data Transfer Object. It is usually an flatten object, which can be serialized into JSON and transferred via API to the client.
+
+```c#
+public class ProductDto {
+  public int Id { get; set; }
+  public string Name { get; set; }
+  public string Description { get; set; }
+  public decimal Price { get; set; }
+  public string PictureUrl { get; set; }
+  public string ProductType { get; set; }
+  public string ProductBrand { get; set; }
+}
+```
+
+```c#
+public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
+{
+  var spec = new ProductsWithTypesAndBrandsSpecification(id);
+  var product = await _productRepo.GetEntityWithSpec(spec);
+
+  return new ProductToReturnDto()
+  {
+    Id = product.Id,
+    Name = product.Name,
+    Description = product.Description,
+    PictureUrl = product.PictureUrl,
+    Price = product.Price,
+    ProductBrand = product.ProductBrand.Name,
+    ProductType = product.ProductType.Name,
+  };
 }
 ```
