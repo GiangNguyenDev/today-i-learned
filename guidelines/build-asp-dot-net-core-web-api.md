@@ -31,6 +31,7 @@
   - [Use specification in Controller class](#use-specification-in-controller-class)
 - [Class Diagram](#class-diagram)
   - [Create DTO object](#create-dto-object)
+  - [Serving static content from the API](#serving-static-content-from-the-api)
 
 # Create new Web API project
 
@@ -631,4 +632,16 @@ public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
     ProductType = product.ProductType.Name,
   };
 }
+```
+
+## Serving static content from the API
+
+Create a folder `wwwroot` to store the static files like images. As default, the application will search this folder for the static content.
+
+![](images/build-asp-dot-net-core-web-api_1678652861.png)
+
+Enables static file serving for the current request path
+
+```c#
+app.UseStaticFiles();
 ```

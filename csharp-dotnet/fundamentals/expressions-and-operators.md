@@ -50,9 +50,9 @@ Switch & with|switch|Switch expression|num switch {<br>  1 => true,<br>  _ => fa
 ||!=|Not equals|x != y 
 |Logical And|&|And|x & y 
 |Logical Xor|^|Exclusive Or|x ^ y 
-|Logical Or|\||Or|x \|y 
+|Logical Or|\||Or|x \| y 
 |Conditional And|&&|Conditional And|x && y
-|Conditional Or|\|\||Conditional Or|x \|\|y 
+|Conditional Or|\|\||Conditional Or|x \|\| y 
 |Null coalescing|??|Null coalescing|x ?? y
 |Conditional|?:|Conditional|isTrue ? thenThis : elseThis
 |Assignment and lambda|=|Assign|x = y
