@@ -38,6 +38,7 @@
 
 - Fundamentals
   - [Boolean](csharp-dotnet/fundamentals/boolean.md)
+  - [Expressions and Operators](csharp-dotnet/fundamentals/expressions-and-operators.md)
 - Collections
 - LINQ
 - XML
