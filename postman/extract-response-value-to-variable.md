@@ -13,6 +13,9 @@ postman.setEnvironmentVariable("local_variable", jsonData.access_token);
 
 // Set global variable
 pm.environment.set("global_variable", jsonData.access_token);
+
+// Set variable of current collection
+pm.collectionVariables.set("local_variable", jsonData.access_token);
 ```
 
 ## Export value from XML
