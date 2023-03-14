@@ -32,6 +32,8 @@
 - [Class Diagram](#class-diagram)
   - [Create DTO object](#create-dto-object)
   - [Serving static content from the API](#serving-static-content-from-the-api)
+- [API Error Handling](#api-error-handling)
+  - [Create ApiResponse class](#create-apiresponse-class)
 
 # Create new Web API project
 
@@ -644,4 +646,35 @@ Enables static file serving for the current request path
 
 ```c#
 app.UseStaticFiles();
+```
+
+# API Error Handling
+
+## Create ApiResponse class
+
+```c#
+public class ApiResponse
+{
+  public ApiResponse(int statusCode, string message = null)
+  {
+    StatusCode = statusCode;
+    Message = message ?? GetDefaultMessageForStatusCode(statusCode);
+  }
+
+  public string Message { get; set; }
+
+  public int StatusCode { get; set; }
+
+  private string GetDefaultMessageForStatusCode(int statusCode)
+  {
+    return statusCode switch
+    {
+      400 => "A bad request, you have made",
+      401 => "Authorized, you are not",
+      404 => "Resource found, it was not",
+      500 => "Errors are the path to the dark side. Errors lead to anger. Anger leads to hate. Hate leads to career change",
+      _ => null,
+    };
+  }
+}
 ```
