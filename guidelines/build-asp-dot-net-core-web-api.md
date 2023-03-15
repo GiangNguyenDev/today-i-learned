@@ -34,6 +34,7 @@
   - [Serving static content from the API](#serving-static-content-from-the-api)
 - [API Error Handling](#api-error-handling)
   - [Create ApiResponse class](#create-apiresponse-class)
+  - [Error Handling Class Diagram](#error-handling-class-diagram)
 
 # Create new Web API project
 
@@ -676,5 +677,25 @@ public class ApiResponse
       _ => null,
     };
   }
+}
+```
+
+## Error Handling Class Diagram
+
+```mermaid
+classDiagram
+direction LR
+
+Program ..> ExceptionMiddleware: Register
+ExceptionMiddleware ..> ApiException: Create
+ApiException --|> ApiResponse
+
+class ApiResponse {
+  +Message: string
+  +StatusCode: int
+}
+
+class ApiException {
+  +Details: string
 }
 ```
