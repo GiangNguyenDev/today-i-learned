@@ -129,6 +129,7 @@
 # Shortcuts
 
 - [Chrome Dev Tools Shortcuts](shortcuts/chrome-dev-tools-shortcuts.md)
+- [Diagrams.net Shortcuts](shortcuts/diagrams-net-shortcuts.md)
 - [Excel Shortcuts](shortcuts/excel-shortcuts.md)
 - [Outlook Shortcuts](shortcuts/outlook-shortcuts.md)
 - [Teams Shortcuts](shortcuts/teams-shortcuts.md)
