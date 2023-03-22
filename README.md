@@ -15,6 +15,7 @@
 - [JavaScript](#javascript)
 - [Markdown](#markdown)
 - [Microsoft 365](#microsoft-365)
+- [Network](#network)
 - [Postman](#postman)
 - [Security](#security)
 - [Shortcuts](#shortcuts)
@@ -116,6 +117,10 @@
 # Microsoft 365
 
 - [Remove password from Excel](microsoft-365/remove-password-from-excel.md)
+
+# Network
+
+- [nslookup](network/nslookup.md)
 
 # Postman
 
