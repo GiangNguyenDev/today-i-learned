@@ -34,6 +34,7 @@
   - [Serving static content from the API](#serving-static-content-from-the-api)
 - [API Error Handling](#api-error-handling)
   - [Create ApiResponse class](#create-apiresponse-class)
+  - [Configure customer behavior of API](#configure-customer-behavior-of-api)
   - [Error Handling Class Diagram](#error-handling-class-diagram)
 
 # Create new Web API project
@@ -678,6 +679,25 @@ public class ApiResponse
     };
   }
 }
+```
+
+## Configure customer behavior of API
+
+```c#
+services.Configure<ApiBehaviorOptions>(options =>
+{
+  options.InvalidModelStateResponseFactory = (actionContext) =>
+  {
+    var errors = actionContext.ModelState
+      .Where(e => e.Value.Errors.Count > 0)
+      .SelectMany(x => x.Value.Errors)
+      .Select(x => x.ErrorMessage)
+      .ToArray();
+
+    var errorResponse = new ApiValidationErrorResponse() { Errors = errors };
+    return new BadRequestObjectResult(errorResponse);
+  };
+});
 ```
 
 ## Error Handling Class Diagram
