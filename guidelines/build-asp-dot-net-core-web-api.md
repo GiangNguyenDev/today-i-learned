@@ -36,6 +36,7 @@
   - [Create ApiResponse class](#create-apiresponse-class)
   - [Configure customer behavior of API](#configure-customer-behavior-of-api)
   - [Error Handling Class Diagram](#error-handling-class-diagram)
+- [Add and use Swagger Service](#add-and-use-swagger-service)
 
 # Create new Web API project
 
@@ -718,4 +719,18 @@ class ApiResponse {
 class ApiException {
   +Details: string
 }
+```
+
+# Add and use Swagger Service
+
+```c#
+services.AddSwaggerGen(c =>
+{
+  c.SwaggerDoc("v1", new OpenApiInfo { Title = "SkiNet API", Version = "v1" });
+});
+
+// ...
+
+app.UseSwagger();
+app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SkiNet API v1"));
 ```
