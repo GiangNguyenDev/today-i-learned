@@ -37,6 +37,8 @@
   - [Configure customer behavior of API](#configure-customer-behavior-of-api)
   - [Error Handling Class Diagram](#error-handling-class-diagram)
 - [Add and use Swagger Service](#add-and-use-swagger-service)
+- [Sorting, Searching, Filtering and Paging](#sorting-searching-filtering-and-paging)
+  - [Sorting](#sorting)
 
 # Create new Web API project
 
@@ -733,4 +735,96 @@ services.AddSwaggerGen(c =>
 
 app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SkiNet API v1"));
+```
+
+# Sorting, Searching, Filtering and Paging
+
+## Sorting
+
+```c#
+public interface ISpecification<T>
+{
+  Expression<Func<T, object>> OrderBy { get; }
+
+  Expression<Func<T, object>> OrderByDescending { get; }
+}
+```
+
+```c#
+public class BaseSpecification<T> : ISpecification<T>
+{
+  public Expression<Func<T, object>> OrderBy { get; private set; }
+
+  public Expression<Func<T, object>> OrderByDescending { get; private set; }
+
+  protected void AddOrderBy(Expression<Func<T, object>> orderByExpression)
+  {
+    OrderBy = orderByExpression;
+  }
+
+  protected void AddOrderByDescending(Expression<Func<T, object>> orderByDescExpression)
+  {
+    OrderByDescending = orderByDescExpression;
+  }
+}
+```
+
+```c#
+public class SpecificationEvaluator<TEntity> where TEntity : BaseEntity
+{
+  public static IQueryable<TEntity> GetQuery(IQueryable<TEntity> inputQuery, ISpecification<TEntity> spec)
+  {
+    var query = inputQuery;
+
+    //...
+
+    if (spec.OrderBy != null)
+      query = query.OrderBy(spec.OrderBy);
+
+    if (spec.OrderByDescending != null)
+      query = query.OrderByDescending(spec.OrderByDescending);
+
+    query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
+    return query;
+  }
+}
+```
+
+```c#
+public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
+{
+  public ProductsWithTypesAndBrandsSpecification(string sort)
+  {
+    AddOrderBy(x => x.Name);
+
+    if (!string.IsNullOrEmpty(sort))
+    {
+      switch (sort)
+      {
+        case "priceAsc":
+            AddOrderBy(x => x.Price);
+            break;
+        case "priceDesc":
+            AddOrderByDescending(x => x.Price);
+            break;
+        default:
+            AddOrderBy(x => x.Name);
+            break;
+      }
+    }
+  }
+}
+```
+
+```c#
+public class ProductsController : BaseApiController
+{
+  [HttpGet]
+  public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts(string sort)
+  {
+      var spec = new ProductsWithTypesAndBrandsSpecification(sort);
+      var products = await productRepo.ListAsync(spec);
+      return Ok(mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
+  }
+}
 ```
