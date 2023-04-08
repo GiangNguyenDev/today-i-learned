@@ -17,7 +17,7 @@
   - [Create Repository](#create-repository)
 - [Configuring the migrations](#configuring-the-migrations)
   - [Defining a configuration class](#defining-a-configuration-class)
-  - [Applying the configuration to StoreContext](#applying-the-configuration-to-storecontext)
+  - [Override OnModelCreating method of StoreContext](#override-onmodelcreating-method-of-storecontext)
   - [Apply the migration before running the application](#apply-the-migration-before-running-the-application)
   - [Add Seed data](#add-seed-data)
 - [Generic Repository](#generic-repository)
@@ -37,8 +37,12 @@
   - [Configure customer behavior of API](#configure-customer-behavior-of-api)
   - [Error Handling Class Diagram](#error-handling-class-diagram)
 - [Add and use Swagger Service](#add-and-use-swagger-service)
-- [Sorting, Searching, Filtering and Paging](#sorting-searching-filtering-and-paging)
+- [Sorting, Filtering, Pagination and Searching](#sorting-filtering-pagination-and-searching)
   - [Sorting](#sorting)
+- [Filtering](#filtering)
+- [Pagination](#pagination)
+- [Searching](#searching)
+- [Adding CORS Support to API](#adding-cors-support-to-api)
 
 # Create new Web API project
 
@@ -283,7 +287,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 - `builder.HasOne(p => p ProductBrand)`: Each `Product` has one `ProductBrand`
 - `.WithMany()`: Each `ProductBrand` can be associated with many `Product`s
 
-## Applying the configuration to StoreContext
+## Override OnModelCreating method of StoreContext
 
 ```c#
 public class StoreContext : DbContext
@@ -297,6 +301,20 @@ public class StoreContext : DbContext
     // Applies configuration from all IEntityTypeConfiguration<Product> instances
     // that are defined in provided assembly
     modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+    // Solution to resolve the issue that SQLite does not support decimal type
+    if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
+    {
+      foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+      {
+        var properties = entityType.ClrType.GetProperties().Where(p => p.PropertyType == typeof(decimal));
+
+        foreach (var property in properties)
+        {
+          modelBuilder.Entity(entityType.Name).Property(property.Name).HasConversion<double>();
+        }
+      }
+    }
   }
 }
 ```
@@ -737,7 +755,7 @@ app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SkiNet API v1"));
 ```
 
-# Sorting, Searching, Filtering and Paging
+# Sorting, Filtering, Pagination and Searching
 
 ## Sorting
 
@@ -828,3 +846,263 @@ public class ProductsController : BaseApiController
   }
 }
 ```
+
+# Filtering
+
+```c#
+public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
+{
+  public ProductsWithTypesAndBrandsSpecification(string sort, int? brandId, int? typeId)
+    : base(x =>
+      (!brandId.HasValue || x.ProductBrandId == brandId)
+      && (!typeId.HasValue || x.ProductTypeId == typeId)
+    )
+  {
+    //...
+  }
+}
+```
+
+# Pagination
+
+```c#
+public interface ISpecification<T>
+{
+  //...
+
+  int Take { get; }
+
+  int Skip { get; }
+
+  bool IsPagingEnabled { get; }
+}
+```
+
+```c#
+public class BaseSpecification<T> : ISpecification<T>
+{
+  //...
+
+  public int Take { get; private set; }
+
+  public int Skip { get; private set; }
+
+  public bool IsPagingEnabled { get; private set; }
+
+  protected void ApplyPaging(int skip, int take)
+  {
+    Skip = skip;
+    Take = take;
+    IsPagingEnabled = true;
+  }
+}
+```
+
+```c#
+public class ProductSpecParams
+{
+  private const int MaxPageSize = 50;
+
+  private int _pageSize = 6;
+
+  public int? BrandId { get; set; }
+
+  public int PageIndex { get; set; } = 1;
+
+  public int PageSize
+  {
+    get => _pageSize;
+    set => _pageSize = (value > MaxPageSize) ? MaxPageSize : value;
+  }
+
+  public string Sort { get; set; }
+
+  public int? TypeId { get; set; }
+}
+```
+
+`FromQuery` attribute specifies that a parameter or property should be bound using the request query string
+
+```c#
+public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
+{
+  public ProductsWithTypesAndBrandsSpecification(ProductSpecParams productParams)
+    : base(x =>
+      (!productParams.BrandId.HasValue || x.ProductBrandId == productParams.BrandId)
+      && (!productParams.TypeId.HasValue || x.ProductTypeId == productParams.TypeId)
+    )
+  {
+    //...
+
+    ApplyPaging(productParams.PageSize * (productParams.PageIndex - 1), productParams.PageSize);
+
+    //...
+  }
+}
+```
+
+```c#
+public class Pagination<T> where T : class
+{
+  public Pagination(int pageIndex, int pageSize, int count, IReadOnlyList<T> data)
+  {
+    PageIndex = pageIndex;
+    PageSize = pageSize;
+    Count = count;
+    Data = data;
+  }
+
+  public int PageIndex { get; set; }
+
+  public int PageSize { get; set; }
+
+  public int Count { get; set; }
+
+  public IReadOnlyList<T> Data { get; set; }
+}
+```
+
+```c#
+public interface IGenericRepository<T> where T : BaseEntity
+{
+  Task<int> CountAsync(ISpecification<T> spec);
+}
+```
+
+```c#
+public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
+{
+  public async Task<int> CountAsync(ISpecification<T> spec)
+  {
+    return await ApplySpecification(spec).CountAsync();
+  }
+}
+```
+
+```c#
+public class SpecificationEvaluator<TEntity> where TEntity : BaseEntity
+{
+  public static IQueryable<TEntity> GetQuery(IQueryable<TEntity> inputQuery, ISpecification<TEntity> spec)
+  {
+    var query = inputQuery;
+
+    //...
+
+    // The paging must come after other filtering and ordering
+    if (spec.IsPagingEnabled)
+      query = query.Skip(spec.Skip).Take(spec.Take);
+
+    query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
+    return query;
+  }
+}
+```
+
+```c#
+public class ProductWithFiltersForCountSpecification : BaseSpecification<Product>
+{
+  public ProductWithFiltersForCountSpecification(ProductSpecParams productParams)
+    : base(x =>
+      (!productParams.BrandId.HasValue || x.ProductBrandId == productParams.BrandId)
+      && (!productParams.TypeId.HasValue || x.ProductTypeId == productParams.TypeId)
+    )
+  {
+  }
+}
+```
+
+```c#
+public class ProductsController : BaseApiController
+{
+  //...
+
+  [HttpGet]
+  public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(
+    [FromQuery] ProductSpecParams productParams)
+  {
+    var countSpec = new ProductWithFiltersForCountSpecification(productParams);
+    var totalItems = await productRepo.CountAsync(countSpec);
+    var spec = new ProductsWithTypesAndBrandsSpecification(productParams);
+    var products = await productRepo.ListAsync(spec);
+    var data = mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
+    return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex, productParams.PageSize, totalItems, data));
+  }
+}
+```
+
+# Searching
+
+```c#
+public class ProductSpecParams
+{
+  private string _search;
+
+  public string Search
+  {
+    get => _search;
+    set => _search = value.ToLower();
+  }
+}
+```
+
+```c#
+public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
+{
+  public ProductsWithTypesAndBrandsSpecification(ProductSpecParams productParams)
+    : base(x =>
+      (string.IsNullOrEmpty(productParams.Search) || x.Name.ToLower().Contains(productParams.Search))
+      && (!productParams.BrandId.HasValue || x.ProductBrandId == productParams.BrandId)
+      && (!productParams.TypeId.HasValue || x.ProductTypeId == productParams.TypeId)
+    )
+  {
+    //...
+  }
+}
+```
+
+```c#
+public class ProductWithFiltersForCountSpecification : BaseSpecification<Product>
+{
+  public ProductWithFiltersForCountSpecification(ProductSpecParams productParams)
+    : base(x =>
+      (!productParams.BrandId.HasValue || x.ProductBrandId == productParams.BrandId)
+      && (!productParams.TypeId.HasValue || x.ProductTypeId == productParams.TypeId)
+    )
+  {
+  }
+}
+```
+
+# Adding CORS Support to API
+
+Enable CORS policy to share resources with client side on another domain
+
+```c#
+public static class ApplicationServicesExtensions
+{
+  public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
+  {
+    //...
+
+    services.AddCors(opt =>
+    {
+      opt.AddPolicy("CorsPolicy", policy =>
+      {
+        policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+      });
+    });
+
+    return services;
+  }
+}
+```
+
+In `Program.cs`, add middleware for CORS policy to add Access-Control-Allow-Origin into header response
+
+```c#
+app.UseCors("CorsPolicy");
+```
+
+Response Headers:
+
+![](images/build-asp-dot-net-core-web-api_1680969725.png)
