@@ -16,6 +16,7 @@
 - [Markdown](#markdown)
 - [Microsoft 365](#microsoft-365)
 - [Network](#network)
+- [NPM](#npm)
 - [Postman](#postman)
 - [Security](#security)
 - [Shortcuts](#shortcuts)
@@ -122,6 +123,10 @@
 # Network
 
 - [nslookup](network/nslookup.md)
+
+# NPM
+
+- [NPM Commands](npm/npm-commands.md)
 
 # Postman
 
