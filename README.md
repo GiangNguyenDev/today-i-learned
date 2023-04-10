@@ -130,6 +130,7 @@
 
 # Security
 
+- [Locally-trusted Development Certificate](security/locally-trusted-dev-certificate.md)
 - [Self-signed Certificate](security/self-signed-certificate.md)
 
 # Shortcuts
