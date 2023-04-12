@@ -1,6 +1,7 @@
 ### Categories
 
 - [Angular](#angular)
+- [Apache Kafka](#apache-kafka)
 - [C# \& .NET](#c--net)
 - [Chrome](#chrome)
 - [Convention](#convention)
@@ -34,6 +35,10 @@
 - Dependency Injection
 - HTTP
 - Routing
+
+# Apache Kafka
+
+- [Apache Kafka](apache-kafka/apache-kafka-101.md)
 
 # C# & .NET
 
