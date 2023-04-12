@@ -12,7 +12,7 @@ var jsonData = JSON.parse(responseBody);
 postman.setEnvironmentVariable("local_variable", jsonData.access_token);
 
 // Set global variable
-pm.environment.set("global_variable", jsonData.access_token);
+pm.globals.set("global_variable", jsonData.access_token);
 
 // Set variable of current collection
 pm.collectionVariables.set("local_variable", jsonData.access_token);

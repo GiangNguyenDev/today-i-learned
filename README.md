@@ -17,6 +17,7 @@
 - [Markdown](#markdown)
 - [Microsoft 365](#microsoft-365)
 - [Network](#network)
+- [NPM](#npm)
 - [Postman](#postman)
 - [Security](#security)
 - [Shortcuts](#shortcuts)
@@ -45,6 +46,7 @@
 - Fundamentals
   - [Boolean](csharp-dotnet/fundamentals/boolean.md)
   - [Expressions and Operators](csharp-dotnet/fundamentals/expressions-and-operators.md)
+  - [Extension Methods](csharp-dotnet/fundamentals/extension-methods.md)
 - Collections
 - LINQ
 - XML
@@ -127,6 +129,10 @@
 
 - [nslookup](network/nslookup.md)
 
+# NPM
+
+- [NPM Commands](npm/npm-commands.md)
+
 # Postman
 
 - [Add header for the entire collection](postman/add-header-for-the-entire-collection.md)
@@ -134,6 +140,7 @@
 
 # Security
 
+- [Locally-trusted Development Certificate](security/locally-trusted-dev-certificate.md)
 - [Self-signed Certificate](security/self-signed-certificate.md)
 
 # Shortcuts
