@@ -33,6 +33,14 @@ git switch <branch_name>
 git merge <branch_name>
 ```
 
+# Stash
+
+### Stash single file
+
+```
+git stash push -- <file full path>
+```
+
 # Account
 
 ## Set up commit email
