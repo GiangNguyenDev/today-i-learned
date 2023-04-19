@@ -22,3 +22,5 @@
 |Add new word selection|<kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Double Click</kbd>
 |Toggle bookmark on current line|<kbd>Ctrl</kbd> <kbd>B</kbd>, <kbd>T</kbd>
 |Clear all bookmarks in all files|<kbd>Ctrl</kbd> <kbd>B</kbd>, <kbd>C</kbd>
+|Navigate to previous subword|<kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Left</kbd>
+|Navigate to next subword|<kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Right</kbd>
