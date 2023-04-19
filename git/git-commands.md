@@ -38,7 +38,15 @@ git merge <branch_name>
 ### Stash single file
 
 ```
+git stash -- <file full path>
 git stash push -- <file full path>
+```
+
+### Stash selected files/hunks
+
+```
+git stash -p
+git stash push -p
 ```
 
 # Account
