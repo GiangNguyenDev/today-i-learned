@@ -36,6 +36,7 @@
 - Dependency Injection
 - HTTP
 - Routing
+  - [Sending data during navigation](angular/routing/sending-data-during-navigation.md)
 
 # Apache Kafka
 
