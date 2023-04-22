@@ -141,6 +141,7 @@
 # Security
 
 - [Locally-trusted Development Certificate](security/locally-trusted-dev-certificate.md)
+- [JWT](security/jwt.md)
 - [Self-signed Certificate](security/self-signed-certificate.md)
 
 # Shortcuts
