@@ -36,6 +36,7 @@
 - Dependency Injection
 - HTTP
 - Routing
+  - [Sending data during navigation](angular/routing/sending-data-during-navigation.md)
 
 # Apache Kafka
 
@@ -171,12 +172,14 @@
 - [Active snippet on typing for markdown](vscode/activate-snippet-on-typing-for-markdown.md)
 - [Create custom task](vscode/create-custom-task.md)
 - [Setting for suggestion based on words in document](vscode/settings-text-editor-suggestions.md)
+- [VS Code Commands](vscode/vscode-commands.md)
 
 # Windows
 
 - [Access localhost from mobile device](windows/access-localhost-from-mobile-device.md)
 - [Net Commands](windows/net-commands.md)
 - [Network Shell](windows/network-shell.md)
+- [XCOPY Commands](windows/xcopy-commands.md)
 
 # WiX Toolset
 
