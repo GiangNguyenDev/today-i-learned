@@ -71,6 +71,7 @@
 
 # Chrome
 
+- [Block specific request](chrome/block-specific-request.md)
 - [Inspect dropdown menu](chrome/inspect-dropdown-menu.md)
 
 # Convention
