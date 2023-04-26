@@ -2,4 +2,6 @@
 
 Why trying to simulate a corrupted connection with an specific server, I asked myself, how can I only block requests to a specific url or domain. With Chrome Dev Tools you can right click on one request and choose one option to block it like the screenshot below.
 
-![](images/block-specific-request_1682432290.png)
+![](images/block-specific-request_1682494585.png)
+
+![](images/block-specific-request_1682494593.png)
