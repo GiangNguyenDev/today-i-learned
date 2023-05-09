@@ -6,6 +6,12 @@
 dotnet ef migrations add InitialCreate
 ```
 
+## Create database and apply migration to it
+
+```console
+dotnet ef database update
+```
+
 ## Reset all migrations
 
 ```console
