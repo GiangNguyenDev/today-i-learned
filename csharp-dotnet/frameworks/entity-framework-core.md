@@ -1,0 +1,14 @@
+# Entity Framework Core Commands
+
+## Add a migration
+
+```console
+dotnet ef migrations add InitialCreate
+```
+
+## Reset all migrations
+
+```console
+dotnet ef database update 0
+dotnet ef migrations remove
+```
