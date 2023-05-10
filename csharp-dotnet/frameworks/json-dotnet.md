@@ -1,3 +1,7 @@
+# Introduction
+
+Json.NET is a high-performance JSON framework for .NET Framework. For newer .NET versions, please use `System.Text.Json` components.
+
 # Serialize an object to JSON
 
 ```c#
