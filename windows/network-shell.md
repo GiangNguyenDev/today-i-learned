@@ -10,6 +10,13 @@ netsh http show sslcert ipport=0.0.0.0:8891
 netsh http show sslcert hostnameport=qa.zurich-rechner.de:443
 ```
 
+## Set Variables for Certificate and Application Id
+
+```console
+SET certhash=424a2f5b69be78f3b6508640c94aab479d7420f2
+SET appid={00112233-4455-6677-8899-AABBCCDDEEFF}
+```
+
 ## Bind SSL Certificate to IP Address and Port
 
 ```console
