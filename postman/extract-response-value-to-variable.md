@@ -8,14 +8,17 @@ In the tab `Tests` you can write customized JavaScript to extract value from a r
 // Convert response to JSON object
 var jsonData = JSON.parse(responseBody);
 
-// Set variable of current environment
-postman.setEnvironmentVariable("local_variable", jsonData.access_token);
-
-// Set global variable
+// Define a global variable
 pm.globals.set("global_variable", jsonData.access_token);
 
-// Set variable of current collection
-pm.collectionVariables.set("local_variable", jsonData.access_token);
+// Define a collection variable
+pm.collectionVariables.set("collection_variable", jsonData.access_token);
+
+// Define an environment variable in the currently selected environment
+pm.environment.set("environment_variable", jsonData.access_token);
+
+// Define a local variable
+pm.variables.set("local_variable", jsonData.access_token);
 ```
 
 ## Export value from XML
