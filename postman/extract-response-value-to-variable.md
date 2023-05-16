@@ -35,3 +35,7 @@ if (elementValue) {
   pm.environment.set("my_variable", elementValue);
 }
 ```
+
+---
+
+_Source: https://learning.postman.com/docs/sending-requests/variables/#defining-variables-in-scripts_
