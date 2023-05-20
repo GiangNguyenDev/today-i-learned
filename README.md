@@ -184,6 +184,7 @@
 # Windows
 
 - [Access localhost from mobile device](windows/access-localhost-from-mobile-device.md)
+- [Change device installation settings](windows/change-device-installation-settings.md)
 - [Net Commands](windows/net-commands.md)
 - [Network Shell](windows/network-shell.md)
 - [XCOPY Commands](windows/xcopy-commands.md)
