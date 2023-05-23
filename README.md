@@ -14,6 +14,7 @@
 - [Hardware](#hardware)
 - [HeidiSQL](#heidisql)
 - [HTML](#html)
+- [IIS](#iis)
 - [JavaScript](#javascript)
 - [Markdown](#markdown)
 - [Microsoft 365](#microsoft-365)
@@ -121,6 +122,10 @@
 
 - [Hide PDF toolbar in iframe](html/hide-pdf-toolbar-in-iframe.md)
 - [HTML Color Names](html/html-color-names.md)
+
+# IIS
+
+- [Restart App Pool with Script](iis/restart-app-pool-with-script.md)
 
 # JavaScript
 
