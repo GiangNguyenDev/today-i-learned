@@ -152,6 +152,7 @@
 # Postman
 
 - [Add header for the entire collection](postman/add-header-for-the-entire-collection.md)
+- [Dynamic Variables](postman/dynamic-variables.md)
 - [Extract response value to variable](postman/extract-response-value-to-variable.md)
 
 # Regular Expression
