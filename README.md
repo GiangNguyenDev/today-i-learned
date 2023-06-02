@@ -63,6 +63,7 @@
 - Networking
 - Serialization
   - [Data Contract Serializer](csharp-dotnet/serialization/data-contract-serializer.md)
+  - [JsonSerializer](csharp-dotnet/serialization/json-serializer.md)
 - Assemblies
 - Reflection
 - Dynamic
