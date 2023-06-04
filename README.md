@@ -14,12 +14,14 @@
 - [Hardware](#hardware)
 - [HeidiSQL](#heidisql)
 - [HTML](#html)
+- [IIS](#iis)
 - [JavaScript](#javascript)
 - [Markdown](#markdown)
 - [Microsoft 365](#microsoft-365)
 - [Network](#network)
 - [NPM](#npm)
 - [Postman](#postman)
+- [Regular Expression](#regular-expression)
 - [Security](#security)
 - [Shortcuts](#shortcuts)
 - [UML](#uml)
@@ -49,6 +51,7 @@
   - [Boolean](csharp-dotnet/fundamentals/boolean.md)
   - [Expressions and Operators](csharp-dotnet/fundamentals/expressions-and-operators.md)
   - [Extension Methods](csharp-dotnet/fundamentals/extension-methods.md)
+  - [DateTime](csharp-dotnet/fundamentals/date-time.md)
 - Collections
 - LINQ
 - XML
@@ -60,6 +63,7 @@
 - Networking
 - Serialization
   - [Data Contract Serializer](csharp-dotnet/serialization/data-contract-serializer.md)
+  - [JsonSerializer](csharp-dotnet/serialization/json-serializer.md)
 - Assemblies
 - Reflection
 - Dynamic
@@ -122,6 +126,10 @@
 - [Hide PDF toolbar in iframe](html/hide-pdf-toolbar-in-iframe.md)
 - [HTML Color Names](html/html-color-names.md)
 
+# IIS
+
+- [Restart App Pool with Script](iis/restart-app-pool-with-script.md)
+
 # JavaScript
 
 - [How to format console output](javascript/console-log-formatting.md)
@@ -145,7 +153,12 @@
 # Postman
 
 - [Add header for the entire collection](postman/add-header-for-the-entire-collection.md)
+- [Dynamic Variables](postman/dynamic-variables.md)
 - [Extract response value to variable](postman/extract-response-value-to-variable.md)
+
+# Regular Expression
+
+- [Regular Expressions](regular-expression/regular-expressions.md)
 
 # Security
 
@@ -158,6 +171,7 @@
 - [Chrome Dev Tools Shortcuts](shortcuts/chrome-dev-tools-shortcuts.md)
 - [Diagrams.net Shortcuts](shortcuts/diagrams-net-shortcuts.md)
 - [Excel Shortcuts](shortcuts/excel-shortcuts.md)
+- [Notepad++](shortcuts/notepad-plus-plus-shortcuts.md)
 - [Outlook Shortcuts](shortcuts/outlook-shortcuts.md)
 - [Teams Shortcuts](shortcuts/teams-shortcuts.md)
 - [Visual Studio Code Shortcuts](shortcuts/visual-studio-code-shortcuts.md)
