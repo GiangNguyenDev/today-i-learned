@@ -172,6 +172,7 @@
 
 - [Copies output files after build](visual-studio/copies-output-files-after-build.md)
 - [Get access to IIS metabase folder](visual-studio/get-access-to-iis-metabase-folder.md)
+- [File-Scoped Namespace Declaration Setting](visual-studio/file-scoped-namespace-declaration.md)
 - [Specifies application subdirectories for libraries](visual-studio/specifies-application-subdirectories-for-libraries.md)
 
 # Visual Studio Code
