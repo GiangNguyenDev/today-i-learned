@@ -54,6 +54,7 @@
 - [Containers](bootstrap/containers.md)
 - [Display](bootstrap/display.md)
 - [Flex](bootstrap/flex.md)
+- [Input Group](bootstrap/input-group.md)
 - [Navbar](bootstrap/navbar.md)
 - [Spacing](bootstrap/spacing.md)
 
