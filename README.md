@@ -183,6 +183,7 @@
 
 - [Chrome Dev Tools Shortcuts](shortcuts/chrome-dev-tools-shortcuts.md)
 - [Diagrams.net Shortcuts](shortcuts/diagrams-net-shortcuts.md)
+- [Emmet Shortcuts](shortcuts/emmet-shortcuts.md)
 - [Excel Shortcuts](shortcuts/excel-shortcuts.md)
 - [Notepad++](shortcuts/notepad-plus-plus-shortcuts.md)
 - [Outlook Shortcuts](shortcuts/outlook-shortcuts.md)
