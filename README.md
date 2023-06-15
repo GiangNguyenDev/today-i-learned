@@ -21,6 +21,7 @@
 - [Microsoft 365](#microsoft-365)
 - [Network](#network)
 - [NPM](#npm)
+- [Notepad++](#notepad)
 - [Postman](#postman)
 - [Regular Expression](#regular-expression)
 - [Security](#security)
@@ -162,6 +163,10 @@
 # NPM
 
 - [NPM Commands](npm/npm-commands.md)
+
+# Notepad++
+
+- [Search Filer Syntax](notepad-plus-plus/search-filter-syntax.md)
 
 # Postman
 
