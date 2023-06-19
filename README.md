@@ -87,6 +87,7 @@
   - [Get custom binding from web.config](csharp-dotnet/wcf/get-custom-binding-from-web-config.md)
 - Regular Expressions
 - Frameworks
+  - [Blazor](csharp-dotnet/frameworks/blazor.md)
   - [Entity Framework Core](csharp-dotnet/frameworks/entity-framework-core.md)
   - [Json.NET](csharp-dotnet/frameworks/json-dotnet.md)
 
