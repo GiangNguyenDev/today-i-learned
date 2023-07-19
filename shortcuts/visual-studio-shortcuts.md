@@ -24,3 +24,4 @@
 |Clear all bookmarks in all files|<kbd>Ctrl</kbd> <kbd>B</kbd>, <kbd>C</kbd>
 |Navigate to previous subword|<kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Left</kbd>
 |Navigate to next subword|<kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Right</kbd>
+|Duplicate line/selection|<kbd>Ctrl</kbd> <kbd>E</kbd>, <kbd>Ctrl</kbd> <kbd>V</kbd>
