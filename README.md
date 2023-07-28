@@ -223,6 +223,7 @@
 - [Character Map](windows/character-map.md)
 - [Net Commands](windows/net-commands.md)
 - [Network Shell](windows/network-shell.md)
+- [Windows Terminal](windows/windows-terminal.md)
 - [XCOPY Commands](windows/xcopy-commands.md)
 
 # WiX Toolset
