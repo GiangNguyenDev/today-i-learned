@@ -79,6 +79,7 @@
   - [Data Contract Serializer](csharp-dotnet/serialization/data-contract-serializer.md)
   - [JsonSerializer](csharp-dotnet/serialization/json-serializer.md)
 - Assemblies
+  - [Resources](csharp-dotnet/assemblies/resources.md)
 - Reflection
 - Dynamic
 - Security
