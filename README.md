@@ -41,7 +41,8 @@
 - Dependency Injection
 - HTTP
 - Routing
-  - [Sending data during navigation](angular/routing/sending-data-during-navigation.md)
+  - [Common Routing Tasks](angular/routing/common-routing-tasks.md)
+  - [Route Reuse Strategy](angular/routing/route-reuse-strategy.md)
 
 # Apache Kafka
 
