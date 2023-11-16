@@ -20,3 +20,11 @@
 |Column selection|<kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Alt</kbd> <kbd>Arrow</kbd>
 |Expand current selection|<kbd>Shift</kbd> <kbd>Alt</kbd> <kbd>Right</kbd>
 |Shrink current selection|<kbd>Shift</kbd> <kbd>Alt</kbd> <kbd>Left</kbd>
+
+# Extension Shortcuts
+
+## GitLens
+
+|Command|Shortcut
+|--|--
+|Open changes with previous revision|<kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>G</kbd>, <kbd>,</kbd>
