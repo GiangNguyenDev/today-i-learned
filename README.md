@@ -157,6 +157,7 @@
 
 # Microsoft 365
 
+- [Create file with VBA](microsoft-365/create-file-with-vba.md)
 - [Remove password from Excel](microsoft-365/remove-password-from-excel.md)
 
 # Network
