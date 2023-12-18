@@ -2,6 +2,7 @@
 
 - [Angular](#angular)
 - [Apache Kafka](#apache-kafka)
+- [Azure DevOps](#azure-devops)
 - [Bootstrap](#bootstrap)
 - [C# \& .NET](#c--net)
 - [CSS](#css)
@@ -47,6 +48,10 @@
 # Apache Kafka
 
 - [Apache Kafka](apache-kafka/apache-kafka-101.md)
+
+# Azure DevOps
+
+- [Pipeline](azure-devops/pipeline.md)
 
 # Bootstrap
 
