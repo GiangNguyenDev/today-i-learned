@@ -199,6 +199,7 @@
 - [Diagrams.net Shortcuts](shortcuts/diagrams-net-shortcuts.md)
 - [Emmet Shortcuts](shortcuts/emmet-shortcuts.md)
 - [Excel Shortcuts](shortcuts/excel-shortcuts.md)
+- [HeidiSQL](shortcuts/heidisql-shortcuts.md)
 - [Notepad++](shortcuts/notepad-plus-plus-shortcuts.md)
 - [Outlook Shortcuts](shortcuts/outlook-shortcuts.md)
 - [Teams Shortcuts](shortcuts/teams-shortcuts.md)
