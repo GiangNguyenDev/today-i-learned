@@ -1,4 +1,4 @@
-# How to format console output in JavaScript
+# Print data to console output with JavaScript
 
 ## Format specifiers
 
@@ -12,3 +12,9 @@
 ```
 
 ![console-log-formatting](images/console-log-formatting.png)
+
+## Print object data
+
+```console
+console.dir(myObject);
+```
