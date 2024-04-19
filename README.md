@@ -37,7 +37,8 @@
 
 - TypeScript
   - [Add resource into HTML in runtime](angular/typescript/add-resource-into-html-in-runtime.md)
-- Built-in Directives
+- Directives
+  - [Attribute Directives](angular/directives/attribute-directive.md)
 - Forms
 - Dependency Injection
 - HTTP
@@ -46,7 +47,7 @@
   - [Route Reuse Strategy](angular/routing/route-reuse-strategy.md)
   - [Router Event](angular/routing/router-event.md)
 - Template
-  - [Pipe](angular/template/pipe.md)
+  - [Pipe](angular/templates/pipe.md)
 
 # Apache Kafka
 
