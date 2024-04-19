@@ -45,6 +45,8 @@
   - [Common Routing Tasks](angular/routing/common-routing-tasks.md)
   - [Route Reuse Strategy](angular/routing/route-reuse-strategy.md)
   - [Router Event](angular/routing/router-event.md)
+- Template
+  - [Pipe](angular/template/pipe.md)
 
 # Apache Kafka
 
