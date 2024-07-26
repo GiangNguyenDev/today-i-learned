@@ -35,6 +35,8 @@
 
 # Angular
 
+- Components
+  - [Programmatically rendering components](angular/components/programmatically-rendering-components.md)
 - TypeScript
   - [Add resource into HTML in runtime](angular/typescript/add-resource-into-html-in-runtime.md)
 - Directives
