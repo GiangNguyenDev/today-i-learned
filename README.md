@@ -101,8 +101,10 @@
 - Regular Expressions
 - Frameworks
   - [Blazor](csharp-dotnet/frameworks/blazor.md)
-  - [Entity Framework Core](csharp-dotnet/frameworks/entity-framework-core.md)
   - [Json.NET](csharp-dotnet/frameworks/json-dotnet.md)
+- .NET CLI
+  - [dotnet commands](csharp-dotnet/dotnet-cli/dotnet-commands.md)
+  - [Entity Framework Commands](csharp-dotnet/dotnet-cli/entity-framework-commands.md)
 
 # CSS
 
