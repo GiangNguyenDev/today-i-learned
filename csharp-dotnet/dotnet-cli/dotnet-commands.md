@@ -20,15 +20,15 @@
 
 `dotnet tool update -g dotnet-ef -v 8.0.8`
 
-`dotnet ef migrations add <name> -o <output directory>`
+`dotnet ef migrations add <name> -o <output-directory>`
 
 `dotnet ef database update`
 
-`dotnet ef database drop -p <project> -s <startup project>`
+`dotnet ef database drop -p <project> -s <startup-project>`
 
-`dotnet ef migrations remove -p <project> -s <startup project>`
+`dotnet ef migrations remove -p <project> -s <startup-project>`
 
-`dotnet ef migrations add <name> -p <project> -s <startup project> -o <output directory>`
+`dotnet ef migrations add <name> -p <project> -s <startup-project> -o <output-directory>`
 
 # Run a project
 
