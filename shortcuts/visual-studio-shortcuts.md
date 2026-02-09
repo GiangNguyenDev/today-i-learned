@@ -31,6 +31,7 @@
 | Show inline references               | <kbd>Alt</kbd> <kbd>3</kbd>                                |
 | Insert next matching caret           | <kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>.</kbd>               |
 | Remove last caret                    | <kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>,</kbd>               |
+| Insert caret at all matching         | <kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>ü</kbd>               |
 | Expand selection                     | <kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>+</kbd>               |
 | Contract selection                   | <kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>-</kbd>               |
 | Expand selection to containing block | <kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>´</kbd>               |
