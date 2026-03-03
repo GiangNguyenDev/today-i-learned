@@ -19,3 +19,9 @@
 | Command     | Shortcut                        |
 | ----------- | ------------------------------- |
 | Switch mode | <kbd>Shift</kbd> <kbd>Tab</kbd> |
+
+# Others
+
+| Command | Description        |
+| ------- | ------------------ |
+| !       | Activate Bash mode |
